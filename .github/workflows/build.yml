@@ -95,7 +95,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        hub release create \
-          --attach weeder/weeder.gz \
-          --message "${{ github.ref_name }}" \
-          ${{ github.ref_name }}
+        gh release create \
+          ${{ github.ref_name }} \
+          weeder/weeder.gz \
+          --title "${{ github.ref_name }}"
