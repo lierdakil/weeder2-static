@@ -48,8 +48,8 @@ jobs:
         id: setup-haskell-cabal
         name: Setup Haskell
         with:
-          ghc-version: '9.4'
-          cabal-version: '3.6'
+          ghc-version: '9.6'
+          cabal-version: '3.8'
 
       - uses: actions/cache@v3
         name: Cache cabal-store
@@ -59,7 +59,7 @@ jobs:
 
       - run: |
           cabal install weeder -j \
-            --constraint weeder==2.5.0 \
+            --constraint weeder==2.7.0 \
             --enable-executable-static --enable-static \
             --enable-relocatable --enable-split-sections \
             --enable-executable-stripping --disable-shared \
